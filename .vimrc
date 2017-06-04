@@ -8,10 +8,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 
 """ Code
-" Plug 'scrooloose/syntastic'
+Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'terryma/vim-multiple-cursors'
@@ -44,17 +45,43 @@ Plug 'pangloss/vim-javascript'
 Plug 'marijnh/tern_for_vim'
 Plug 'mattn/emmet-vim'
 
+""" Typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+
 " Jade
 Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
 """ PHP
 "Plug 'captbaritone/better-indent-support-for-php-with-html'
 
 """ Livescript
-Plug 'gkz/vim-ls', {'for': 'ls'}
+" Plug 'gkz/vim-ls', {'for': 'ls'}
 
 
 call plug#end()
 
+""" Programming language specific settings
+
+"""
+""" TYPESCRIPT
+"""
+
+" Balloon tooltip functionality
+" set ballooneval
+" autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+
+" Custom tsserver location
+let g:tsuquyomi_use_dev_node_module=2
+let g:tsuquyomi_tsserver_path='/Users/cain/.nvm/versions/node/v7.4.0/bin/tsserver'
+
+" Integrate with syntastic
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+
+autocmd FileType typescript setlocal completeopt+=preview
+
+
+""" Editor settings
 
 " Autoformat hotkey
 noremap <F3> :Autoformat<CR>
