@@ -1,0 +1,101 @@
+// Place your settings in this file to overwrite the default settings
+{
+    // Telemetry
+
+    // Enable usage data and errors to be sent to Microsoft.
+    "telemetry.enableTelemetry": false,
+
+    // Enable crash reports to be sent to Microsoft.
+    // This option requires restart to take effect.
+    "telemetry.enableCrashReporter": false,
+
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular",
+    "editor.fontSize": 14,
+    "editor.cursorBlinking": "solid",
+    "editor.minimap.enabled": true,
+    "editor.rulers": [
+        100
+    ],
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": true,
+
+    "terminal.external.osxExec": "iTerm.app",
+
+
+    "addAngular.stylesheet": "sass",
+    "html.format.wrapAttributes": "force",
+    "html.format.wrapLineLength": 100,
+    "typescriptHero.resolver.multiLineWrapThreshold": 100,
+
+    // Vim Configuration
+
+    // Keybinding overrides to use for normal mode.
+    "vim.otherModesKeyBindings": [
+        {
+            "before": ["<C-w>"],
+            "after": [ "<Esc>", "\\", "\\", "w" ]
+        },
+        {
+            "before": ["<C-b>"],
+            "after": [ "<Esc>", "\\", "\\", "b" ]
+        }
+    ],
+
+    // Non-recursive keybinding overrides to use for normal mode.
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<D-c>"],
+            "after": [ "y" ]
+        }
+    ],
+
+    // Enable some vim ctrl key commands that override otherwise common operations, like ctrl+c
+    "vim.useCtrlKeys": true,
+
+    // Use system clipboard for unnamed register.
+    "vim.useSystemClipboard": false,
+
+    // Non-recursive keybinding overrides to use for insert mode.
+    "vim.insertModeKeyBindingsNonRecursive": [],
+
+    // Use a non blinking block cursor.
+    "vim.useSolidBlockCursor": false,
+
+    // Number of lines to scroll with CTRL-U and CTRL-D commands.
+    "vim.scroll": 20,
+
+    // keywords contain alphanumeric characters and '_'
+    "vim.iskeyword": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+
+    // Ignore case in search patterns.
+    "vim.ignorecase": true,
+
+    // Override the 'ignorecase' option if the search pattern contains upper case characters.
+    "vim.smartcase": true,
+
+    // When there is a previous search pattern, highlight all its matches.
+    "vim.hlsearch": false,
+
+    // Keybinding overrides to use for insert mode.
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [ "j", "j" ],
+            "after": [ "<Esc>" ]
+        }
+    ],
+
+    "vim.easymotion": true,
+    "vim.overrideCopy": true,
+    "vim.visualstar": true,
+    "vim.disableAnnoyingGcMessage": true,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.enableNeovim": true,
+    "vim.surround": true,
+
+    "window.zoomLevel": 0,
+
+    "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "vs-seti",
+    "workbench.sideBar.location": "left"
+}
