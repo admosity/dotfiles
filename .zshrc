@@ -109,6 +109,8 @@ alias gs="git status"
 alias gpb="BRANCH=\`git branch | grep '*' | sed 's/* //'\`; git push -u origin \$BRANCH"
 alias gcpb="git add -A && git commit -v && gpb"
 alias gcb="git checkout -B"
+alias glgrc="git for-each-ref --sort=committerdate refs/heads/ refs/remotes/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+alias glgr="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%cn%Creset' --abbrev-commit --date=relative"
 
 alias psql_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias psql_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"

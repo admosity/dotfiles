@@ -9,16 +9,31 @@
     // This option requires restart to take effect.
     "telemetry.enableCrashReporter": false,
 
+    // for making emmet work in other modes
+
+    "[scss]": {
+        "editor.quickSuggestions": false
+    },
+
+    "emmet.triggerExpansionOnTab": true,
+
     "editor.fontLigatures": true,
     "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular",
+    // "editor.fontFamily": "OperatorMono-Book, Hasklig-Medium, SourceCodePro-Regular",
     "editor.fontSize": 14,
     "editor.cursorBlinking": "solid",
     "editor.minimap.enabled": true,
-    "editor.rulers": [
-        100
-    ],
     "editor.snippetSuggestions": "top",
     "editor.tabCompletion": true,
+    "editor.wordWrap": "on",
+    // "editor.formatOnPaste": true,
+
+    "macros": { 
+        "revealFile": [
+            "workbench.files.action.showActiveFileInExplorer",
+            "workbench.files.action.focusFilesExplorer"
+        ]
+    },
 
     "terminal.external.osxExec": "iTerm.app",
 
@@ -26,7 +41,8 @@
     "addAngular.stylesheet": "sass",
     "html.format.wrapAttributes": "force",
     "html.format.wrapLineLength": 100,
-    "typescriptHero.resolver.multiLineWrapThreshold": 100,
+
+    "prettier.singleQuote": true,
 
     // Vim Configuration
 
@@ -39,6 +55,14 @@
         {
             "before": ["<C-b>"],
             "after": [ "<Esc>", "\\", "\\", "b" ]
+        },
+        {
+            "before": ["s"],
+            "after": ["S"]
+        },
+        {
+            "before": ["g", "l"],
+            "after": ["<f8>"]
         }
     ],
 
@@ -58,9 +82,6 @@
 
     // Non-recursive keybinding overrides to use for insert mode.
     "vim.insertModeKeyBindingsNonRecursive": [],
-
-    // Use a non blinking block cursor.
-    "vim.useSolidBlockCursor": false,
 
     // Number of lines to scroll with CTRL-U and CTRL-D commands.
     "vim.scroll": 20,
@@ -86,16 +107,38 @@
     ],
 
     "vim.easymotion": true,
-    "vim.overrideCopy": true,
+    "vim.overrideCopy": false,
     "vim.visualstar": true,
-    "vim.disableAnnoyingGcMessage": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.enableNeovim": true,
     "vim.surround": true,
+    "vim.easymotionMarkerFontFamily": "OperatorMono-Book",
+    "vim.textwidth": 140,
 
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
+    "workbench.sideBar.location": "left",
+    "typescript.useCodeSnippetsOnMethodSuggest": true,
+    "editor.renderIndentGuides": false,
+    "editor.formatOnType": true,
+    "editor.tabSize": 2,
 
-    "workbench.colorTheme": "One Monokai",
-    "workbench.iconTheme": "vs-seti",
-    "workbench.sideBar.location": "left"
+    "search.useIgnoreFiles": true,
+    "search.useIgnoreFilesByDefault": true,
+
+    // typescript hero
+    "typescriptHero.resolver.ignorePatterns": [
+        "build",
+        "out",
+        "dist",
+        "submodules"
+    ],
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorCustomizations": {
+        "gitDecoration.ignoredResourceForeground": "#696969"
+    },
+    "vsicons.projectDetection.autoReload": true,
+    "workbench.panel.location": "bottom"
 }

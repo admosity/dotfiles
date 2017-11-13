@@ -1,0 +1,234 @@
+"*":
+  "Sublime-Style-Column-Selection":
+    selectKeyTrigger: "Shift"
+  "activate-power-mode":
+    particles:
+      enabled: false
+      size: {}
+      spawnCount: {}
+      totalCount: {}
+    screenShake:
+      enabled: false
+  "atom-beautify":
+    general:
+      _analyticsUserId: "f69d2d47-c2d7-4bba-a80b-b05668d4925e"
+    html:
+      indent_size: 2
+      wrap_attributes: "force-aligned"
+      wrap_line_length: 100
+    js:
+      indent_size: 2
+      wrap_line_length: 100
+    jsx:
+      indent_size: 2
+    sass:
+      indent_size: 2
+    typescript:
+      indent_size: 2
+  "atom-material-ui":
+    colors:
+      abaseColor: "#aad875"
+      accentColor: "#6f8853"
+      paintCursor: true
+      predefinedColor: "Green"
+    fonts:
+      fontSize: 14
+    tabs:
+      compactTabs: true
+      noTabMinWidth: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  "atom-terminal": {}
+  "atom-ternjs":
+    useSnippets: true
+  "atom-typescript": {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    suggestionListFollows: "Cursor"
+  core:
+    closeEmptyWindows: false
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "atom-ternjs"
+      "linter-jscs"
+      "linter-eslint"
+      "Sublime-Style-Column-Selection"
+      "linter-htmlhint"
+      "activate-power-mode"
+      "whitespace"
+      "highlight-selected"
+      "minimap-highlight-selected"
+      "atom-wallaby"
+      "autoclose-html"
+      "multirow-tabs"
+      "linter-sass-lint"
+      "color-picker"
+      "git-blame"
+      "git-time-machine"
+      "language-cypher"
+      "language-diff"
+      "typescript-modules-helper"
+    ]
+    packagesWithKeymapsDisabled: [
+      "emmet"
+    ]
+    restorePreviousWindowsOnStart: "no"
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+  editor:
+    fontFamily: "Hasklig-Medium"
+    fontSize: 12
+    invisibles: {}
+    lineHeight: 1.25
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+    normalizeIndentOnPaste: true
+    scrollPastEnd: true
+    softWrap: true
+  emmet: {}
+  "exception-reporting":
+    userId: "4276e7cf-473a-b6b2-4014-32dbcdbb9657"
+  "file-icons": {}
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "find-and-replace":
+    scrollToResultOnLiveSearch: true
+  "language-babel": {}
+  linter: {}
+  "linter-eslint":
+    eslintrcPath: "~/.eslintrc"
+    globalNodePath: "/Users/cain/.nvm/versions/node/v6.2.1"
+    useGlobalEslint: true
+  "linter-htmlhint": {}
+  "linter-jscs":
+    esnext: true
+    fixOnSave: true
+  "linter-ui-default":
+    panelHeight: 74
+  "markdown-preview": {}
+  "merge-conflicts": {}
+  minimap:
+    plugins:
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      selection: true
+      selectionDecorationsZIndex: 0
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
+  nuclide:
+    "nuclide-arcanist": {}
+    "nuclide-buck-files": {}
+    "nuclide-clang-atom": {}
+    "nuclide-datatip": {}
+    "nuclide-debugger-hhvm": {}
+    "nuclide-flow": {}
+    "nuclide-format-js": {}
+    "nuclide-hack": {}
+    "nuclide-health": {}
+    "nuclide-home":
+      showHome: false
+    "nuclide-ios-simulator-logs": {}
+    "nuclide-ocaml": {}
+    "nuclide-output": {}
+    "nuclide-working-sets":
+      workingSets: [
+        {
+          name: "AEM"
+          active: false
+          uris: [
+            "/Users/cain/git/mercer/mercer-uk/trunk/trunk/.classpath"
+            "/Users/cain/git/mercer/mercer-uk/trunk/trunk/.project"
+            "/Users/cain/git/mercer/mercer-uk/trunk/trunk/README.md"
+            "/Users/cain/git/mercer/mercer-uk/trunk/trunk/bundle"
+            "/Users/cain/git/mercer/mercer-uk/trunk/trunk/content/pom.xml"
+            "/Users/cain/git/mercer/mercer-uk/trunk/trunk/content/src"
+            "/Users/cain/git/mercer/mercer-uk/trunk/trunk/pom.xml"
+          ]
+        }
+      ]
+  "one-dark-ui":
+    fontSize: 10
+    hideDockButtons: true
+    tabSizing: "Minimum"
+  "one-light-ui":
+    layoutMode: "Compact"
+  pigments:
+    mergeColorDuplicates: true
+    sortPaletteColors: "by color"
+  "seti-ui":
+    compactView: true
+    font: "Default Atom Font"
+    themeColor: "Steel"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "status-bar": {}
+  tabs:
+    enableVcsColoring: true
+    usePreviewTabs: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode-plus":
+    clearMultipleCursorsOnEscapeInsertMode: false
+    ignoreCaseForSearch: true
+    incrementalSearch: true
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+    setCursorToStartOfChangeOnUndoRedo: false
+    useClipboardAsDefaultRegister: false
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+    ignoreWhitespaceOnCurrentLine: false
+    keepMarkdownLineBreakWhitespace: false
+    removeTrailingWhitespace: false
+".babel.regexp.source":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+    normalizeIndentOnPaste: "true"
+".css.scss.source":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+".css.source.styled":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+    normalizeIndentOnPaste: "true"
+".js.jsx.source":
+  editor:
+    normalizeIndentOnPaste: "true"
+".languagebabel.ttlextension":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+    normalizeIndentOnPaste: "true"
+".sass.source":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+".source.ts":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+    normalizeIndentOnPaste: "true"
+".source.tsx":
+  editor:
+    nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
+    normalizeIndentOnPaste: "true"

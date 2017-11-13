@@ -1,0 +1,192 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+@monokai-blue: #66d9ef;
+@monokai-blue-light: #89BDFF;
+@monokai-blue-lighter: lighten(@monokai-blue-light, 10%);
+@monokai-gray: #595959;
+@monokai-gray-darker: #383830;
+@monokai-gray-darkest: #141411;
+@monokai-gray-lightest: #595959;
+@monokai-gray-light: #E6E6E6;
+@monokai-green: #A6E22A;
+@monokai-green-light: #A6E22E;
+@monokai-grey-dark: #272822;
+@monokai-magenta: #F92672;
+@monokai-purple: #AE81FF;
+@monokai-purple-light: #FD5FF1;
+@monokai-yellow: #E6DB74;
+@monokai-yellow-dark: #75715E;
+@monokai-yellow-light: #F8F8F2;
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+atom-text-editor .line-number.foldable .icon-right {
+  visibility: visible;
+}
+
+// .scrollbars-visible-always ::-webkit-scrollbar {
+//   display: none;
+// }
+
+atom-text-editor {
+  text-rendering: optimizeSpeed;
+  
+  // .vertical-scrollbar {
+  //   display: none;
+  // }
+  .horizontal-scrollbar {
+    ::-webkit-scrollbar {
+      background-color: #fff;
+    }
+  }
+  
+  // make foldable icon always visible to always show folds
+  .line-number.foldable .icon-right {
+    visibility: visible;
+  }
+  
+  // for preventing ligatures in quotes and regular expressions
+  .string.quoted, .string.regexp {
+    -webkit-font-feature-settings: "liga" off, "calt" off;    
+  }
+
+  
+  // CUSTOM SYNTAX OPTIONS
+  
+  // CUSTOM JS - compatible with babel es6 plugin
+  .syntax--js {
+     .syntax--constant.syntax--other.syntax--object.syntax--key.syntax--js {
+      color: #66d9ef; 
+        .syntax--string.syntax--unquoted.syntax--js {
+          color: #66d9ef; 
+        }
+     }
+  }
+  .source.js {
+  } // end custom JS configurations
+  
+  // CUSTOM TS and TSX config
+  .syntax--tsx, .syntax--ts {
+    // expression highlighting mixin
+    .expressions() {
+      &.syntax--support {
+        color: @monokai-blue;
+      }
+      &.syntax--this {
+        color: @monokai-purple;
+        & ~ .syntax--property {
+          color: @monokai-blue-lighter;
+        }
+      }
+      &.syntax--super {
+        color: @monokai-magenta;
+        & ~ .syntax--property {
+          color: @monokai-blue-lighter;
+        }
+      }
+      &.syntax--property {
+        color: @monokai-blue-lighter;
+      }
+      &.syntax--definition.syntax--variable.syntax--object {
+        color: @monokai-blue-lighter;
+      }
+      &.syntax--name.syntax--type {
+        color: #a6e22e;
+        text-decoration: underline;
+      }
+      &.syntax--object-literal.syntax--key {
+        color: lighten(@monokai-green, 25%);
+        .syntax--string.syntax--quoted {
+          color: lighten(@monokai-green, 25%);
+        }
+      }
+      &.syntax--method.syntax--function {
+        color: #a6e22e;
+        font-style: italic;
+      }
+    }
+    &.syntax--string.syntax--template {
+      .syntax--variable {
+        color: white;
+      }
+      .syntax--punctuation.syntax--accessor {
+        color: @monokai-magenta;
+      }
+      .syntax--template-expression {
+        &.syntax--begin {
+          color: @monokai-magenta;
+        }
+        &.syntax--end {
+          color: @monokai-magenta;
+        }
+      }
+      .expressions;
+    }
+    // GENERAL
+    .expressions;
+  }
+  
+  // CUSTOM SCSS
+  .syntax--scss {
+    &.syntax--variable {
+      color: white;
+    }
+    &.syntax--interpolation {
+      &.syntax--begin {
+        color: @monokai-magenta;
+      }
+      &.syntax--end {
+        color: @monokai-magenta;
+      }
+      .syntax--variable {
+        color: @monokai-blue-lighter;
+      }
+    }
+  }
+  // 
+  // .gutter .line-number {
+  //   &.git-line-added {
+  //     background-color: darken(@monokai-green, 15%);
+  //   }
+  //   &.git-line-modified {
+  //     background-color: darken(@monokai-yellow, 15%);
+  //   }
+  //   &.git-line-removed {
+  //     background-color: darken(@monokai-magenta, 15%);
+  //   }
+  // }
+}
+
+
+// Modal positioning
+// .overlay.from-top, atom-panel.modal  {
+//   width: 85%;
+//   left: 7.5%;
+//   margin-left: 0;
+//   top: 50%;
+//   transform: translate(0, -50%);
+// }
+
+// specific modal handling in theme-one-dark-ui
+[theme-one-dark-ui-layoutmode] {
+  // .overlay.from-top, atom-panel.modal, atom-panel-container.modal  {
+  //   // width: 100%;
+  //   left: 50%;
+  //   margin-left: 0;
+  //   top: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
+}
