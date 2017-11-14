@@ -8,7 +8,6 @@ code --install-extension WallabyJs.quokka-vscode
 code --install-extension WallabyJs.wallaby-vscode
 code --install-extension Zignd.html-css-class-completion
 code --install-extension andrejunges.Handlebars
-code --install-extension azemoh.one-monokai
 code --install-extension christian-kohler.path-intellisense
 code --install-extension donjayamanne.githistory
 code --install-extension eamodio.gitlens
@@ -20,7 +19,6 @@ code --install-extension joelday.docthis
 code --install-extension johnpapa.Angular2
 code --install-extension mrmlnc.vscode-scss
 code --install-extension ms-vscode.atom-keybindings
-code --install-extension ms-vscode.typescript-javascript-grammar
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension natewallace.angular2-inline
 code --install-extension rbbit.typescript-hero
@@ -28,5 +26,3 @@ code --install-extension robertohuertasm.vscode-icons
 code --install-extension sebastianbaar.vscode-add-angular2-files
 code --install-extension v4run.transpose
 code --install-extension vscodevim.vim
-code --install-extension zhuangtongfa.Material-theme
-code --install-extension ziyasal.vscode-open-in-github
