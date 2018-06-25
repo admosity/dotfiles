@@ -1,144 +1,239 @@
 // Place your settings in this file to overwrite the default settings
 {
     // Telemetry
-
     // Enable usage data and errors to be sent to Microsoft.
     "telemetry.enableTelemetry": false,
-
     // Enable crash reports to be sent to Microsoft.
     // This option requires restart to take effect.
     "telemetry.enableCrashReporter": false,
-
     // for making emmet work in other modes
-
     "[scss]": {
         "editor.quickSuggestions": false
     },
-
     "emmet.triggerExpansionOnTab": true,
-
-    "editor.fontLigatures": true,
-    "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular",
+    // "editor.fontLigatures": true,
+    // "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
+    "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
     // "editor.fontFamily": "OperatorMono-Book, Hasklig-Medium, SourceCodePro-Regular",
     "editor.fontSize": 14,
-    "editor.cursorBlinking": "solid",
+    "editor.cursorBlinking": "phase",
     "editor.minimap.enabled": true,
     "editor.snippetSuggestions": "top",
     "editor.tabCompletion": true,
+    // Keep peek editors open even when double clicking their content or when hitting Escape.
+    "editor.stablePeek": true,
     "editor.wordWrap": "on",
+    "editor.rulers": [
+        100
+    ],
     // "editor.formatOnPaste": true,
-
-    "macros": { 
+    "macros": {
         "revealFile": [
             "workbench.files.action.showActiveFileInExplorer",
             "workbench.files.action.focusFilesExplorer"
         ]
     },
-
     "terminal.external.osxExec": "iTerm.app",
-
-
-    "addAngular.stylesheet": "sass",
-    "html.format.wrapAttributes": "force",
+    "html.format.wrapAttributes": "force-aligned",
     "html.format.wrapLineLength": 100,
-
-    "prettier.singleQuote": true,
-
     // Vim Configuration
-
     // Keybinding overrides to use for normal mode.
-    "vim.otherModesKeyBindings": [
+    "vim.normalModeKeyBindings": [
         {
-            "before": ["<C-w>"],
-            "after": [ "<Esc>", "\\", "\\", "w" ]
+            "before": [
+                "<C-w>"
+            ],
+            "after": [
+                "<Esc>",
+                "\\",
+                "\\",
+                "w"
+            ]
         },
         {
-            "before": ["<C-b>"],
-            "after": [ "<Esc>", "\\", "\\", "b" ]
+            "before": [
+                "<C-b>"
+            ],
+            "after": [
+                "<Esc>",
+                "\\",
+                "\\",
+                "b"
+            ]
         },
         {
-            "before": ["s"],
-            "after": ["S"]
+            "before": [
+                "g",
+                "l"
+            ],
+            "after": [
+                "<F8>"
+            ]
         },
         {
-            "before": ["g", "l"],
-            "after": ["<f8>"]
+            "before": [
+                "g",
+                "r"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.rename",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.transformToLowercase",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "U"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.transformToUppercase",
+                    "args": []
+                }
+            ]
         }
     ],
-
-    // Non-recursive keybinding overrides to use for normal mode.
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.visualModeKeyBindings": [
         {
-            "before": ["<D-c>"],
-            "after": [ "y" ]
+            "before": [
+                "g",
+                "r"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.rename",
+                    "args": []
+                }
+            ]
+        },
+        // surround
+        {
+            "before": [
+                "s"
+            ],
+            "after": [
+                "S"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.transformToLowercase",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "U"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.transformToUppercase",
+                    "args": []
+                }
+            ]
         }
     ],
-
     // Enable some vim ctrl key commands that override otherwise common operations, like ctrl+c
     "vim.useCtrlKeys": true,
-
     // Use system clipboard for unnamed register.
     "vim.useSystemClipboard": false,
-
     // Non-recursive keybinding overrides to use for insert mode.
     "vim.insertModeKeyBindingsNonRecursive": [],
-
     // Number of lines to scroll with CTRL-U and CTRL-D commands.
     "vim.scroll": 20,
-
     // keywords contain alphanumeric characters and '_'
     "vim.iskeyword": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-
     // Ignore case in search patterns.
     "vim.ignorecase": true,
-
     // Override the 'ignorecase' option if the search pattern contains upper case characters.
     "vim.smartcase": true,
-
     // When there is a previous search pattern, highlight all its matches.
     "vim.hlsearch": false,
-
+    "vim.foldfix": true,
     // Keybinding overrides to use for insert mode.
     "vim.insertModeKeyBindings": [
         {
-            "before": [ "j", "j" ],
-            "after": [ "<Esc>" ]
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         }
     ],
-
     "vim.easymotion": true,
-    "vim.overrideCopy": false,
-    "vim.visualstar": true,
-    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.easymotionMarkerFontFamily": "Hasklig-Medium",
     "vim.enableNeovim": true,
+    "vim.overrideCopy": false,
+    "vim.statusBarColorControl": false,
     "vim.surround": true,
-    "vim.easymotionMarkerFontFamily": "OperatorMono-Book",
     "vim.textwidth": 140,
-
+    "vim.visualstar": true,
     "window.zoomLevel": -1,
     "workbench.sideBar.location": "left",
     "typescript.useCodeSnippetsOnMethodSuggest": true,
     "editor.renderIndentGuides": false,
     "editor.formatOnType": true,
     "editor.tabSize": 2,
-
     "search.useIgnoreFiles": true,
-    "search.useIgnoreFilesByDefault": true,
-
-    // typescript hero
-    "typescriptHero.resolver.ignorePatterns": [
-        "build",
-        "out",
-        "dist",
-        "submodules"
-    ],
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.colorTheme": "Tomorrow Night Blue",
     "workbench.iconTheme": "vscode-icons",
+    // Navigate between open files using three-finger swipe horizontally.
+    "workbench.editor.swipeToNavigate": true,
     "workbench.colorCustomizations": {
         "gitDecoration.ignoredResourceForeground": "#696969"
     },
-    "vsicons.projectDetection.autoReload": true,
-    "workbench.panel.location": "bottom"
+    // "vsicons.projectDetection.autoReload": true,
+    "explorer.confirmDragAndDrop": false,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": true,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    },
+    "vsicons.presets.hideExplorerArrows": true,
+    "editor.minimap.showSlider": "always",
+    "vsicons.projectDetection.disableDetect": true,
+    "gitlens.keymap": "chorded",
+    "window.restoreWindows": "none",
+    "vsicons.dontShowNewVersionMessage": true,
+    "gitlens.historyExplorer.enabled": true,
+    "editor.renderWhitespace": "none",
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }
