@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/cain/.oh-my-zsh
 export KEYTIMEOUT=1
-export VISUAL=vim
+export VISUAL=nvim
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
@@ -14,7 +14,7 @@ export ANDROID_HOME=/usr/local/share/android-sdk
 # time that oh-my-zsh is loaded.
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm node_version)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_right"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -107,16 +107,21 @@ alias gp="git pull"
 alias gcpp="git add -A && git commit -v && git pull && git push"
 alias gs="git status"
 alias gpb="BRANCH=\`git branch | grep '*' | sed 's/* //'\`; git push -u origin \$BRANCH"
+alias gpbnv="BRANCH=\`git branch | grep '*' | sed 's/* //'\`; git push -u origin \$BRANCH --no-verify"
 alias gcpb="git add -A && git commit -v && gpb"
+alias gcpbnv="git add -A && git commit -v && gpb --no-verify"
 alias gcb="git checkout -B"
 alias glgrc="git for-each-ref --sort=committerdate refs/heads/ refs/remotes/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 alias glgr="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%cn%Creset' --abbrev-commit --date=relative"
+alias gsf="git submodule foreach"
 
 alias psql_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias psql_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias ll='ls -la'
 
 alias swap-keys="mv ~/.config/karabiner/karabiner.json ~/.config/karabiner/temp.json; mv ~/.config/karabiner/karabiner1.json ~/.config/karabiner/karabiner.json; mv ~/.config/karabiner/temp.json ~/.config/karabiner/karabiner1.json;"
+
+alias yarnl="yarn --no-lockfile --ignore-engines"
 
 export NVM_DIR="/Users/cain/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -27,8 +27,6 @@
       indent_size: 2
   "atom-material-ui":
     colors:
-      abaseColor: "#aad875"
-      accentColor: "#6f8853"
       paintCursor: true
       predefinedColor: "Green"
     fonts:
@@ -81,6 +79,7 @@
       "language-cypher"
       "language-diff"
       "typescript-modules-helper"
+      "linter"
     ]
     packagesWithKeymapsDisabled: [
       "emmet"
@@ -93,11 +92,12 @@
     ]
   editor:
     fontFamily: "Hasklig-Medium"
-    fontSize: 12
+    fontSize: 11
     invisibles: {}
     lineHeight: 1.25
     nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
     normalizeIndentOnPaste: true
+    preferredLineLength: 140
     scrollPastEnd: true
     softWrap: true
   emmet: {}
@@ -150,8 +150,8 @@
     "nuclide-working-sets":
       workingSets: [
         {
-          name: "AEM"
           active: false
+          name: "AEM"
           uris: [
             "/Users/cain/git/mercer/mercer-uk/trunk/trunk/.classpath"
             "/Users/cain/git/mercer/mercer-uk/trunk/trunk/.project"
@@ -186,13 +186,11 @@
   tabs:
     enableVcsColoring: true
     usePreviewTabs: false
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode-plus":
     clearMultipleCursorsOnEscapeInsertMode: false
     ignoreCaseForSearch: true
     incrementalSearch: true
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     setCursorToStartOfChangeOnUndoRedo: false
     useClipboardAsDefaultRegister: false
     useSmartcaseForSearch: true

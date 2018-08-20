@@ -14,6 +14,14 @@
     // "editor.fontLigatures": true,
     // "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
     "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
+    "editor.minimap.renderCharacters": false,
+    // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
+    // "editor.lineHeight": 0,
+    // "editor.letterSpacing": 1.125,
+    // Enables font ligatures
+    "editor.fontLigatures": true,
+    // Controls if file decorations should use badges.
+    // "explorer.decorations.badges": false,
     // "editor.fontFamily": "OperatorMono-Book, Hasklig-Medium, SourceCodePro-Regular",
     "editor.fontSize": 14,
     "editor.cursorBlinking": "phase",
@@ -34,8 +42,7 @@
         ]
     },
     "terminal.external.osxExec": "iTerm.app",
-    "html.format.wrapAttributes": "force-aligned",
-    "html.format.wrapLineLength": 100,
+    "html.format.wrapAttributes": "force",
     // Vim Configuration
     // Keybinding overrides to use for normal mode.
     "vim.normalModeKeyBindings": [
@@ -68,6 +75,18 @@
             ],
             "after": [
                 "<F8>"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "D"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.openDeclarationToTheSide",
+                    "args": []
+                }
             ]
         },
         {
@@ -190,6 +209,11 @@
         }
     ],
     "vim.easymotion": true,
+    "vim.easymotionMarkerFontSize": "20",
+    "vim.easymotionMarkerBackgroundColor": "black",
+    "vim.easymotionMarkerForegroundColorOneChar": "#68f442",
+    "vim.easymotionMarkerForegroundColorTwoChar": "#41dff4",
+    "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
     "vim.easymotionMarkerFontFamily": "Hasklig-Medium",
     "vim.enableNeovim": true,
     "vim.overrideCopy": false,
@@ -203,7 +227,6 @@
     "editor.renderIndentGuides": false,
     "editor.formatOnType": true,
     "editor.tabSize": 2,
-    "search.useIgnoreFiles": true,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.colorTheme": "Tomorrow Night Blue",
@@ -235,5 +258,12 @@
     "vsicons.dontShowNewVersionMessage": true,
     "gitlens.historyExplorer.enabled": true,
     "editor.renderWhitespace": "none",
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "prettier.singleQuote": true,
+    "docthis.includeTypes": false,
+    "docthis.includeMemberOfOnClassMembers": false,
+    "docthis.includeMemberOfOnInterfaceMembers": false,
+    "search.useIgnoreFiles": true,
+    "breadcrumbs.enabled": true
 }

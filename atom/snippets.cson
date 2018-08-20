@@ -105,6 +105,12 @@
               $2
             }
             '''
+  'internal':
+    'prefix': 'int'
+    'body': '''
+            /** @internal */
+            '''
+
 
 '.source.json':
   'Key Value':

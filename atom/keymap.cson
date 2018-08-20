@@ -98,6 +98,8 @@ VIM MODE PLUS
   'cmd-shift-m': 'emmet:merge-lines'
   'ctrl-shift-w': 'emmet:wrap-with-abbreviation'
   'alt-cmd-enter': 'emmet:interactive-expand-abbreviation'
+  'f8': 'linter-ui-default:next'
+  'cmd-shift-e': 'tree-view:reveal-active-file'
     
 
 
@@ -128,6 +130,12 @@ VIM MODE PLUS
   'm s': 'vim-mode-plus:map-surround'
   'd s': 'vim-mode-plus:delete-surround-any-pair'
   'c s': 'vim-mode-plus:change-surround-any-pair'
+  
+  ###
+  TYPESCRIPT
+  ###
+  'g h': 'typescript:show-tooltip'
+  'g d': 'typescript:go-to-declaration'
 
 # insert
 'atom-text-editor.vim-mode-plus.insert-mode':

@@ -43,7 +43,7 @@ atom-text-editor .line-number.foldable .icon-right {
 
 atom-text-editor {
   text-rendering: optimizeSpeed;
-  
+
   // .vertical-scrollbar {
   //   display: none;
   // }
@@ -52,20 +52,20 @@ atom-text-editor {
       background-color: #fff;
     }
   }
-  
+
   // make foldable icon always visible to always show folds
   .line-number.foldable .icon-right {
     visibility: visible;
   }
-  
+
   // for preventing ligatures in quotes and regular expressions
   .string.quoted, .string.regexp {
     -webkit-font-feature-settings: "liga" off, "calt" off;    
   }
 
-  
+
   // CUSTOM SYNTAX OPTIONS
-  
+
   // CUSTOM JS - compatible with babel es6 plugin
   .syntax--js {
      .syntax--constant.syntax--other.syntax--object.syntax--key.syntax--js {
@@ -77,7 +77,7 @@ atom-text-editor {
   }
   .source.js {
   } // end custom JS configurations
-  
+
   // CUSTOM TS and TSX config
   .syntax--tsx, .syntax--ts {
     // expression highlighting mixin
@@ -138,7 +138,7 @@ atom-text-editor {
     // GENERAL
     .expressions;
   }
-  
+
   // CUSTOM SCSS
   .syntax--scss {
     &.syntax--variable {
