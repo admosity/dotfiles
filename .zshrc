@@ -5,14 +5,16 @@ export VISUAL=nvim
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# for android
-export ANDROID_HOME=/usr/local/share/android-sdk
+# Show current pwd as title
+export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME=robbyrussell
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME=powerlevel10k/powerlevel10k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_STATUS_VERBOSE=false
@@ -67,7 +69,7 @@ plugins=(git vi-mode wd docker yarn)
 
 # User configuration
 
-export PATH="/Users/cain/.nvm/versions/node/v0.12.7/bin:/usr/local/heroku/bin:/Users/cain/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/cain/bin:/Users/cain/git/git-stree:$ANDROID_HOME"
+# export PATH="/Users/cain/.nvm/versions/node/v0.12.7/bin:/usr/local/heroku/bin:/Users/cain/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/cain/bin:/Users/cain/git/git-stree:$ANDROID_HOME"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -104,16 +106,21 @@ alias gpph="git pull && git push && git push heroku master"
 alias gpp="git pull && git push"
 alias gpphd="git pull && git push && heroku maintenance:on && sleep 15 && git push heroku master && heroku maintenance:off"
 alias gp="git pull"
-alias gcpp="git add -A && git commit -v && git pull && git push"
+alias gcpp="git add -A && git commit -v && git push"
+alias gcpps="git pull && git add -A && git commit -v && git push"
 alias gs="git status"
 alias gpb="BRANCH=\`git branch | grep '*' | sed 's/* //'\`; git push -u origin \$BRANCH"
 alias gpbnv="BRANCH=\`git branch | grep '*' | sed 's/* //'\`; git push -u origin \$BRANCH --no-verify"
 alias gcpb="git add -A && git commit -v && gpb"
 alias gcpbnv="git add -A && git commit -v && gpb --no-verify"
 alias gcb="git checkout -B"
-alias glgrc="git for-each-ref --sort=committerdate refs/heads/ refs/remotes/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+alias glgrc="unbuffer git for-each-ref --sort=committerdate refs/heads/ refs/remotes/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | sed s#origin\/##g | uniq"
 alias glgr="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%cn%Creset' --abbrev-commit --date=relative"
 alias gsf="git submodule foreach"
+alias gmercer="ssh-add ~/.ssh/id_rsa_adam-bitbucket && ssh-add ~/.ssh/id_rsa"
+
+# Diff color word
+alias gddw="git diff --color-words=."
 
 alias psql_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias psql_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
@@ -121,7 +128,26 @@ alias ll='ls -la'
 
 alias swap-keys="mv ~/.config/karabiner/karabiner.json ~/.config/karabiner/temp.json; mv ~/.config/karabiner/karabiner1.json ~/.config/karabiner/karabiner.json; mv ~/.config/karabiner/temp.json ~/.config/karabiner/karabiner1.json;"
 
-alias yarnl="yarn --no-lockfile --ignore-engines"
+alias yarne="yarn --ignore-engines"
+alias yarnl="yarne --no-lockfile"
+alias reyarnl="rm -rf ./node_modules && yarnl"
+alias renpmi="rm -rf ./node_modules && npm i"
+
+# quick weather
+alias weather="curl -4 http://wttr.in"
+
+# code insiders shortcut
+alias codi="code-insiders"
+
+# Node
+
+# Clear node modules
+alias clear_nodemodules="find . -name node_modules -exec rm -rf '{}' +"
+
+# quick webserver
+alias webserver="npx browser-sync start --server --files \"*/*\""
+
+# End of aliases
 
 export NVM_DIR="/Users/cain/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -186,4 +212,87 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH:/Users/cain/bin"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/cain/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# Angular helpers
+# usage: ngrxG feature-name
+
+ngrxG() {
+  ng generate module $1 --flat false;
+  cd $1 && ng generate feature `python -c "print '$1'.title()"` -m $1.module.ts;
+  ng g s $1Facade -m $1.module.ts;
+  mkdir components; cd components; ng g c $1;
+  cd ../..;
+}
+
+ngrxGC() {
+  ( 
+    ng generate module $1 --flat false;
+    cd $1 && ng generate feature `python -c "print '$1'.title()"` -m $1.module.ts;
+    ng g s $1Controller;
+    mkdir components; cd components; ng g c $1;
+  )
+}
+
+ngrxGR() {
+  ng generate module $1 --flat false --routing;
+  cd $1 && ng generate feature `python -c "print '$1'.title()"` -m $1.module.ts;
+  ng g s $1Facade -m $1.module.ts;
+  mkdir components; cd components; ng g c $1;
+  cd ../..;
+}
+
+ngPage() {
+  ng generate module $1 --flat false --routing;
+  ( cd $1; ng g c --flat true $1; )
+}
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# prevent history to dupe for fzf
+setopt HIST_IGNORE_ALL_DUPS
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+###-begin-pm2-completion-###
+### credits to npm for the completion file model
+#
+# Installation: pm2 completion >> ~/.bashrc  (or ~/.zshrc)
+#
+
+COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
+COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
+export COMP_WORDBREAKS
+
+if type complete &>/dev/null; then
+  _pm2_completion () {
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           pm2 completion -- "${COMP_WORDS[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -o default -F _pm2_completion pm2
+elif type compctl &>/dev/null; then
+  _pm2_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       pm2 completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _pm2_completion + -f + pm2
+fi
+###-end-pm2-completion-###
