@@ -8,47 +8,76 @@
     "telemetry.enableCrashReporter": false,
     // for making emmet work in other modes
     "[scss]": {
-        "editor.quickSuggestions": false
+        "editor.quickSuggestions": false,
+        "editor.defaultFormatter": "HookyQR.beautify"
     },
+    // emmet crack
+    "html-css-class-completion.enableEmmetSupport": true,
+    "emmet.showSuggestionsAsSnippets": true,
     "emmet.triggerExpansionOnTab": true,
-    // "editor.fontLigatures": true,
-    // "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
-    "editor.fontFamily": "Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
-    "editor.minimap.renderCharacters": false,
+    // "editor.fontFamily": "Hasklig-Regular, SourceCodePro-Regular, Monaco, Consolas",
+    // "workbench.fontAliasing": "default",
+    // "editor.fontFamily": "DankMono-Medium, Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
+    "editor.fontFamily": "DankMono-Regular, Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
     // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
-    // "editor.lineHeight": 0,
-    // "editor.letterSpacing": 1.125,
+    // "editor.lineHeight": 28,
+    // "terminal.integrated.lineHeight": 1.25,
+    // "editor.letterSpacing": 0.75,
     // Enables font ligatures
     "editor.fontLigatures": true,
     // Controls if file decorations should use badges.
-    // "explorer.decorations.badges": false,
-    // "editor.fontFamily": "OperatorMono-Book, Hasklig-Medium, SourceCodePro-Regular",
-    "editor.fontSize": 14,
-    "editor.cursorBlinking": "phase",
+    // "explorer.decorations.badges": true,
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 15,
+    "editor.cursorBlinking": "solid",
     "editor.minimap.enabled": true,
-    "editor.snippetSuggestions": "top",
-    "editor.tabCompletion": true,
-    // Keep peek editors open even when double clicking their content or when hitting Escape.
-    "editor.stablePeek": true,
+    "editor.snippetSuggestions": "inline",
+    "editor.tabCompletion": "on",
     "editor.wordWrap": "on",
+    "editor.formatOnPaste": false,
+    "editor.autoIndent": "full",
     "editor.rulers": [
-        100
+        140
     ],
-    // "editor.formatOnPaste": true,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.enablePreview": false,
     "macros": {
         "revealFile": [
             "workbench.files.action.showActiveFileInExplorer",
-            "workbench.files.action.focusFilesExplorer"
+            "workbench.files.action.showActiveFileInExplorer"
         ]
     },
     "terminal.external.osxExec": "iTerm.app",
-    "html.format.wrapAttributes": "force",
+    "terminal.integrated.scrollback": 100000,
+    "html.format.wrapAttributes": "force-aligned",
     // Vim Configuration
     // Keybinding overrides to use for normal mode.
     "vim.normalModeKeyBindings": [
+        
+        // Cursor controls
         {
             "before": [
-                "<C-w>"
+                "<C-i>"
+            ],
+            "commands": [{
+                "command": "workbench.action.navigateForward",
+                "args": []
+            }]
+        },
+        {
+            "before": [
+                "<C-o>"
+            ],
+            "commands": [{
+                "command": "workbench.action.navigateBack",
+                "args": []
+            }]
+        },
+        
+        // Easy mode ctrl-k,j handling
+        {
+            "before": [
+                "<C-j>"
             ],
             "after": [
                 "<Esc>",
@@ -59,7 +88,7 @@
         },
         {
             "before": [
-                "<C-b>"
+                "<C-k>"
             ],
             "after": [
                 "<Esc>",
@@ -80,11 +109,19 @@
         {
             "before": [
                 "g",
-                "D"
+                "d"
             ],
             "commands": [
                 {
-                    "command": "editor.action.openDeclarationToTheSide",
+                    "command": "workbench.action.keepEditor",
+                    "args": []
+                },
+                {
+                    "command": "editor.action.revealDefinition",
+                    "args": []
+                },
+                {
+                    "command": "workbench.action.keepEditor",
                     "args": []
                 }
             ]
@@ -92,15 +129,36 @@
         {
             "before": [
                 "g",
+                "D"
+            ],
+            "commands": [{
+                "command": "editor.action.openDeclarationToTheSide",
+                "args": []
+            }]
+        },
+
+        {
+            "before": [
+                "O",
+            ],
+            "after": [
+                "i"
+            ],
+            "commands": [{
+                "command": "editor.action.insertLineBefore",
+                "args": []
+            }]
+        },
+        {
+            "before": [
+                "g",
                 "r"
             ],
             "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.rename",
-                    "args": []
-                }
-            ]
+            "commands": [{
+                "command": "editor.action.rename",
+                "args": []
+            }]
         },
         {
             "before": [
@@ -108,12 +166,10 @@
                 "u"
             ],
             "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.transformToLowercase",
-                    "args": []
-                }
-            ]
+            "commands": [{
+                "command": "editor.action.transformToLowercase",
+                "args": []
+            }]
         },
         {
             "before": [
@@ -121,27 +177,45 @@
                 "U"
             ],
             "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.transformToUppercase",
-                    "args": []
-                }
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
+            "commands": [{
+                "command": "editor.action.transformToUppercase",
+                "args": []
+            }]
+        },
         {
+            "before": [
+                "g",
+                "R"
+            ],
+            "after": [],
+            "commands": [{
+                "command": "editor.action.referenceSearch.trigger",
+                "args": []
+            }]
+        }
+
+    ],
+    "vim.visualModeKeyBindings": [{
             "before": [
                 "g",
                 "r"
             ],
             "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.rename",
-                    "args": []
-                }
-            ]
+            "commands": [{
+                "command": "editor.action.rename",
+                "args": []
+            }]
+        },
+        {
+            "before": [
+                "g",
+                "R"
+            ],
+            "after": [],
+            "commands": [{
+                "command": "editor.action.previewDeclaration",
+                "args": []
+            }]
         },
         // surround
         {
@@ -158,12 +232,10 @@
                 "u"
             ],
             "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.transformToLowercase",
-                    "args": []
-                }
-            ]
+            "commands": [{
+                "command": "editor.action.transformToLowercase",
+                "args": []
+            }]
         },
         {
             "before": [
@@ -171,12 +243,10 @@
                 "U"
             ],
             "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.transformToUppercase",
-                    "args": []
-                }
-            ]
+            "commands": [{
+                "command": "editor.action.transformToUppercase",
+                "args": []
+            }]
         }
     ],
     // Enable some vim ctrl key commands that override otherwise common operations, like ctrl+c
@@ -187,8 +257,6 @@
     "vim.insertModeKeyBindingsNonRecursive": [],
     // Number of lines to scroll with CTRL-U and CTRL-D commands.
     "vim.scroll": 20,
-    // keywords contain alphanumeric characters and '_'
-    "vim.iskeyword": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     // Ignore case in search patterns.
     "vim.ignorecase": true,
     // Override the 'ignorecase' option if the search pattern contains upper case characters.
@@ -197,44 +265,134 @@
     "vim.hlsearch": false,
     "vim.foldfix": true,
     // Keybinding overrides to use for insert mode.
-    "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        }
-    ],
+    "vim.insertModeKeyBindings": [{
+        "before": [
+            "j",
+            "j"
+        ],
+        "after": [
+            "<Esc>"
+        ]
+    }],
     "vim.easymotion": true,
     "vim.easymotionMarkerFontSize": "20",
     "vim.easymotionMarkerBackgroundColor": "black",
     "vim.easymotionMarkerForegroundColorOneChar": "#68f442",
-    "vim.easymotionMarkerForegroundColorTwoChar": "#41dff4",
-    "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
+    "vim.easymotionMarkerForegroundColorTwoChar": "#68f442",
+    "vim.easymotionKeys": "sdfjklwernvo",
+    // "vim.easymotionKeys": "nwhatinheorld",
     "vim.easymotionMarkerFontFamily": "Hasklig-Medium",
     "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.overrideCopy": false,
-    "vim.statusBarColorControl": false,
     "vim.surround": true,
     "vim.textwidth": 140,
     "vim.visualstar": true,
-    "window.zoomLevel": -1,
-    "workbench.sideBar.location": "left",
-    "typescript.useCodeSnippetsOnMethodSuggest": true,
-    "editor.renderIndentGuides": false,
+    "vim.cursorStylePerMode.insert": "line",
+
+    // CamelCaseMotion
+
+    "vim.camelCaseMotion.enable": true,
+
+    // air-line control
+    // "vim.statusBarColorControl": true,
+    // // "vim.statusBarColors.normal": ["#8FBCBB", "#434C5E"],
+    // "vim.statusBarColors.normal": ["#272822", "#fff"],
+    // "vim.statusBarColors.insert": "#BF616A",
+    // "vim.statusBarColors.visual": "#B48EAD",
+    // "vim.statusBarColors.visualline": "#B48EAD",
+    // "vim.statusBarColors.visualblock": "#A3BE8C",
+    // "vim.statusBarColors.replace": "#D08770",
+    // "vim.statusBarColors.commandlineinprogress": "#007ACC",
+    // "vim.statusBarColors.searchinprogressmode": "#007ACC",
+    // "vim.statusBarColors.easymotionmode": "#007ACC",
+    // "vim.statusBarColors.easymotioninputmode": "#007ACC",
+    // "vim.statusBarColors.surroundinputmode": "#007ACC",
+
+
+
+    "window.zoomLevel": 0,
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.suggest.completeFunctionCalls": true,
+    "editor.renderIndentGuides": true,
     "editor.formatOnType": true,
+    "editor.detectIndentation": true,
     "editor.tabSize": 2,
+    "editor.renameOnType": false,
+    "html.autoClosingTags": false,
     "atomKeymap.promptV3Features": true,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "workbench.colorTheme": "Tomorrow Night Blue",
-    "workbench.iconTheme": "vscode-icons",
-    // Navigate between open files using three-finger swipe horizontally.
-    "workbench.editor.swipeToNavigate": true,
+    "editor.multiCursorModifier": "alt",
     "workbench.colorCustomizations": {
-        "gitDecoration.ignoredResourceForeground": "#696969"
+        "gitDecoration.ignoredResourceForeground": "#696969",
+    },
+
+    "bracketPairColorizer.consecutivePairColors": [
+        "()",
+        "[]",
+        "{}",
+        ["<", "</"],
+        ["<", "/>"],
+        [
+            "Gold",
+            "Orchid",
+            "LightSkyBlue",
+            "#A6E22E",
+            "White"
+        ],
+        "Red"
+    ],
+    "bracketPairColorizer.showBracketsInGutter": true,
+    "bracketPairColorizer.activeScopeCSS": [ "backgroundColor : {color}" ],
+    "bracketPairColorizer.scopeLineCSS": [
+        "borderStyle : solid",
+        "borderWidth : 2px",
+        "borderColor : {color}; opacity: 0.5"
+      ],
+    // "bracketPairColorizer.forceIterationColorCycle": true,
+    "editor.tokenColorCustomizations": {
+        "[Monokai]": {
+            "textMateRules": [{
+                    "scope": "meta.object-literal.key.ts",
+                    "settings": {
+                        "foreground": "#71a8ff"
+                    }
+                },
+                {
+                    "scope": "variable.other.object.ts, variable.other.constant.ts, variable.other.readwrite.ts",
+                    "settings": {
+                        "foreground": "#42f4b9"
+                    }
+                },
+                {
+                    "scope": "meta.tag.custom.start.html entity.name.tag.html, meta.tag.custom.end.html entity.name.tag.html, meta.attribute.unrecognized entity.other.attribute-name.html ",
+                    "settings": {
+                        "foreground": "#42d0f4"
+                    }
+                }
+            ]
+        },
+
+        "[Tomorrow Night Blue]": {
+            "textMateRules": [{
+                    "scope": "meta.object-literal.key.ts",
+                    "settings": {
+                        "foreground": "#71a8ff"
+                    }
+                },
+                {
+                    "scope": "variable.other.object.ts, variable.other.constant.ts, variable.other.readwrite.ts",
+                    "settings": {
+                        "foreground": "#42f4b9"
+                    }
+                },
+                {
+                    "scope": "meta.tag.custom.start.html entity.name.tag.html, meta.tag.custom.end.html entity.name.tag.html, meta.attribute.unrecognized entity.other.attribute-name.html ",
+                    "settings": {
+                        "foreground": "#42d0f4"
+                    }
+                }
+            ]
+        }
     },
     // "vsicons.projectDetection.autoReload": true,
     "explorer.confirmDragAndDrop": false,
@@ -250,20 +408,80 @@
         "suppressUpdateNotice": true,
         "suppressWelcomeNotice": false
     },
-    "vsicons.presets.hideExplorerArrows": true,
     "editor.minimap.showSlider": "always",
-    "vsicons.projectDetection.disableDetect": true,
     "gitlens.keymap": "chorded",
-    "window.restoreWindows": "none",
-    "vsicons.dontShowNewVersionMessage": true,
-    "gitlens.historyExplorer.enabled": true,
-    "editor.renderWhitespace": "none",
+    "editor.renderWhitespace": "all",
     "typescript.updateImportsOnFileMove.enabled": "always",
-
-    "prettier.singleQuote": true,
     "docthis.includeTypes": false,
     "docthis.includeMemberOfOnClassMembers": false,
     "docthis.includeMemberOfOnInterfaceMembers": false,
     "search.useIgnoreFiles": true,
-    "breadcrumbs.enabled": true
+    "breadcrumbs.enabled": true,
+    "editor.accessibilitySupport": "off",
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "javascript.preferences.quoteStyle": "single",
+    "typescriptHero.imports.stringQuoteStyle": "'",
+    "typescript.preferences.quoteStyle": "single",
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true,
+    "workbench.colorTheme": "Monokai",
+    "editor.suggest.localityBonus": true,
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "workbench.list.keyboardNavigation": "simple",
+
+    "settings.cycle": [{
+        "id": "listMode", // must be unique
+        "overrideWorkspaceSettings": false,
+        "values": [{
+                "workbench.list.keyboardNavigation": "simple"
+            },
+            {
+                "workbench.list.keyboardNavigation": "filter"
+            }
+        ]
+    }],
+    "editor.formatOnSave": false,
+    // "[typescript]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "vsicons.projectDetection.autoReload": true,
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.presets.hideExplorerArrows": true,
+    "atlascode.jira.workingSite": {
+        "baseUrlSuffix": "atlassian.net"
+    },
+    "yaml.schemas": {
+        "file:///Users/cain/.vscode-insiders/extensions/atlassian.atlascode-2.6.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "typescript.tsserver.log": "verbose",
+    "git.autofetch": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.suggestSelection": "first",
+    "extensions.autoUpdate": false,
+    "atlascode.jira.lastCreateSiteAndProject": {
+        "siteId": "empty",
+        "projectKey": ""
+    },
+    "turboConsoleLog.quote": "'",
+    "window.restoreWindows": "none",
+    "workbench.sideBar.location": "left"
 }
