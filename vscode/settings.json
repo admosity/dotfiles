@@ -11,8 +11,6 @@
         "editor.quickSuggestions": false,
         "editor.defaultFormatter": "HookyQR.beautify"
     },
-    // emmet crack
-    "html-css-class-completion.enableEmmetSupport": true,
     "emmet.showSuggestionsAsSnippets": true,
     "emmet.triggerExpansionOnTab": true,
     // "editor.fontFamily": "Hasklig-Regular, SourceCodePro-Regular, Monaco, Consolas",
@@ -24,23 +22,24 @@
     // "terminal.integrated.lineHeight": 1.25,
     // "editor.letterSpacing": 0.75,
     // Enables font ligatures
-    "editor.fontLigatures": true,
+    // "editor.fontLigatures": true,
+    "editor.cursorSmoothCaretAnimation": true,
     // Controls if file decorations should use badges.
     // "explorer.decorations.badges": true,
     "editor.fontSize": 16,
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "DankMono-Regular, Hasklig-Medium, SourceCodePro-Regular, Monaco, Consolas",
+    "terminal.integrated.rendererType": "experimentalWebgl",
     "editor.cursorBlinking": "solid",
     "editor.minimap.enabled": true,
     "editor.snippetSuggestions": "inline",
     "editor.tabCompletion": "on",
-    "editor.wordWrap": "on",
     "editor.formatOnPaste": false,
-    "editor.autoIndent": "full",
     "editor.rulers": [
-        140
+        // 140
     ],
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.editor.enablePreview": false,
+    // "workbench.editor.enablePreviewFromQuickOpen": false,
+    // "workbench.editor.enablePreview": false,
     "macros": {
         "revealFile": [
             "workbench.files.action.showActiveFileInExplorer",
@@ -275,20 +274,16 @@
         ]
     }],
     "vim.easymotion": true,
-    "vim.easymotionMarkerFontSize": "20",
     "vim.easymotionMarkerBackgroundColor": "black",
     "vim.easymotionMarkerForegroundColorOneChar": "#68f442",
-    "vim.easymotionMarkerForegroundColorTwoChar": "#68f442",
+    "vim.easymotionMarkerForegroundColorTwoCharFirst": "#68f442",
     "vim.easymotionKeys": "sdfjklwernvo",
-    // "vim.easymotionKeys": "nwhatinheorld",
-    "vim.easymotionMarkerFontFamily": "Hasklig-Medium",
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.overrideCopy": false,
     "vim.surround": true,
     "vim.textwidth": 140,
     "vim.visualstar": true,
-    "vim.cursorStylePerMode.insert": "line",
 
     // CamelCaseMotion
 
@@ -314,11 +309,11 @@
     "window.zoomLevel": 0,
     "typescript.preferences.importModuleSpecifier": "relative",
     "typescript.suggest.completeFunctionCalls": true,
-    "editor.renderIndentGuides": true,
+    "editor.renderIndentGuides": false,
     "editor.formatOnType": true,
     "editor.detectIndentation": true,
     "editor.tabSize": 2,
-    "editor.renameOnType": false,
+    "editor.linkedEditing": false,
     "html.autoClosingTags": false,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "alt",
@@ -372,6 +367,28 @@
             ]
         },
 
+        "[Snazzy Operator]": {
+            "textMateRules": [{
+                    "scope": "meta.object-literal.key.ts",
+                    "settings": {
+                        "foreground": "#71a8ff"
+                    }
+                },
+                {
+                    "scope": "variable.other.object.ts, variable.other.constant.ts, variable.other.readwrite.ts",
+                    "settings": {
+                        "foreground": "#42f4b9"
+                    }
+                },
+                {
+                    "scope": "meta.tag.custom.start.html entity.name.tag.html, meta.tag.custom.end.html entity.name.tag.html, meta.attribute.unrecognized entity.other.attribute-name.html ",
+                    "settings": {
+                        "foreground": "#42d0f4"
+                    }
+                }
+            ]
+        },
+
         "[Tomorrow Night Blue]": {
             "textMateRules": [{
                     "scope": "meta.object-literal.key.ts",
@@ -395,7 +412,7 @@
         }
     },
     // "vsicons.projectDetection.autoReload": true,
-    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDragAndDrop": true,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -410,7 +427,6 @@
     },
     "editor.minimap.showSlider": "always",
     "gitlens.keymap": "chorded",
-    "editor.renderWhitespace": "all",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "docthis.includeTypes": false,
     "docthis.includeMemberOfOnClassMembers": false,
@@ -452,16 +468,15 @@
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "[javascript]": {
-      "editor.defaultFormatter": "HookyQR.beautify"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "vsicons.projectDetection.autoReload": true,
     "workbench.iconTheme": "vscode-icons",
-    "vsicons.presets.hideExplorerArrows": true,
     "atlascode.jira.workingSite": {
         "baseUrlSuffix": "atlassian.net"
     },
     "yaml.schemas": {
-        "file:///Users/cain/.vscode-insiders/extensions/atlassian.atlascode-2.6.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///Users/cain/.vscode/extensions/atlassian.atlascode-2.8.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "HookyQR.beautify"
@@ -472,16 +487,29 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "vsicons.dontShowNewVersionMessage": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "editor.suggestSelection": "first",
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": true,
     "atlascode.jira.lastCreateSiteAndProject": {
-        "siteId": "empty",
+        "siteId": "",
         "projectKey": ""
     },
     "turboConsoleLog.quote": "'",
     "window.restoreWindows": "none",
-    "workbench.sideBar.location": "left"
+    "workbench.sideBar.location": "left",
+    "insertnum.start": 1,
+    "editor.columnSelection": false,
+    "vim.startofline": false,
+    "editor.renderLineHighlight": "none",
+    "editor.wordWrapColumn": 140,
+    "editor.minimap.scale": 1,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.maxColumn": 150,
+    "AllAutocomplete.maxItemsInSingleList": 5,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.renderWhitespace": "none"
+    // "customizeUI.stylesheet": {
+    //   ".quick-input-list": "width: 1200px !important;"
+    // }
 }

@@ -16,7 +16,7 @@
 @monokai-gray-darker: #383830;
 @monokai-gray-darkest: #141411;
 @monokai-gray-lightest: #595959;
-@monokai-gray-light: #E6E6E6;
+@monokai-gray-light: #E6E6E6; 
 @monokai-green: #A6E22A;
 @monokai-green-light: #A6E22E;
 @monokai-grey-dark: #272822;
@@ -42,7 +42,17 @@ atom-text-editor .line-number.foldable .icon-right {
 // }
 
 atom-text-editor {
-  text-rendering: optimizeSpeed;
+  // font-weight: bold;
+  // -webkit-font-smoothing: subpixel-antialiased;
+  // font-weight: lighter !important;
+  text-rendering: optimizeLegibility;
+  // font-weight: 700;
+  // -webkit-font-smoothing: none;
+  -webkit-font-smoothing: antialiased;
+  // -webkit-text-stroke: 0.03rem;
+  -webkit-text-stroke: 0.01rem;
+  // -webkit-font-smoothing: subpixel-antialiased;
+  // -webkit-font-smoothing: grayscale;
 
   // .vertical-scrollbar {
   //   display: none;
@@ -62,6 +72,10 @@ atom-text-editor {
   .string.quoted, .string.regexp {
     -webkit-font-feature-settings: "liga" off, "calt" off;    
   }
+
+  // .syntax--keyword, .syntax--storage, .syntax--entity.syntax--name.syntax--tag {
+  //   color: cornflowerblue !important;
+  // }
 
 
   // CUSTOM SYNTAX OPTIONS
@@ -92,7 +106,7 @@ atom-text-editor {
         }
       }
       &.syntax--super {
-        color: @monokai-magenta;
+        color: @monokai-blue-light;
         & ~ .syntax--property {
           color: @monokai-blue-lighter;
         }
@@ -123,14 +137,14 @@ atom-text-editor {
         color: white;
       }
       .syntax--punctuation.syntax--accessor {
-        color: @monokai-magenta;
+        color: @monokai-blue-light;
       }
       .syntax--template-expression {
         &.syntax--begin {
-          color: @monokai-magenta;
+          color: @monokai-blue-light;
         }
         &.syntax--end {
-          color: @monokai-magenta;
+          color: @monokai-blue-light;
         }
       }
       .expressions;
@@ -146,10 +160,10 @@ atom-text-editor {
     }
     &.syntax--interpolation {
       &.syntax--begin {
-        color: @monokai-magenta;
+        color: @monokai-blue-light;
       }
       &.syntax--end {
-        color: @monokai-magenta;
+        color: @monokai-blue-light;
       }
       .syntax--variable {
         color: @monokai-blue-lighter;
@@ -165,7 +179,7 @@ atom-text-editor {
   //     background-color: darken(@monokai-yellow, 15%);
   //   }
   //   &.git-line-removed {
-  //     background-color: darken(@monokai-magenta, 15%);
+  //     background-color: darken(@monokai-blue-light, 15%);
   //   }
   // }
 }

@@ -32,6 +32,7 @@
 
 'atom-text-editor':
   'ctrl-e': 'editor:move-to-end-of-line'
+  'ctrl-alt-o': 'typescript:organize-imports'
 
 # Override Enter key for specific syntaxes only
 'atom-pane atom-text-editor[data-grammar~="html"]:not([mini]):not(.autocomplete-active), atom-pane atom-text-editor[data-grammar~="xml"]:not([mini]):not(.autocomplete-active)':
@@ -45,9 +46,18 @@
 # END EMMET
 
 
+# Autocomplete 
+# "*":
+#   "autocomplete-plus":
+#     "useCoreMovementCommands": false
+
+
 'body':
   'cmd-shift-f10': 'custom:close-panes'
   'cmd-alt-l': 'editor:auto-indent'
+  'cmd-shift-T': 'pane:reopen-closed-item'
+  'ctrl-shift-r': 'application:reopen-project'
+
 
 
 'atom-text-editor.vim-mode.insert-mode':
@@ -64,6 +74,7 @@ VIM MODE PLUS
 # workspace
 'atom-workspace:not([mini])':
   'ctrl-g': 'core:cancel'
+  'ctrl-alt-e': 'snippets:expand'
 
 # text-editor
 'atom-text-editor:not([mini])':
@@ -72,6 +83,9 @@ VIM MODE PLUS
   'ctrl-cmd-i': 'cursor-history:next-within-editor'
   'ctrl-cmd-o': 'cursor-history:prev-within-editor'
   'ctrl-alt-t': 'transpose-selection:transpose'
+  'cmd-.': 'diagnostics:show-actions-at-position',
+  'cmd-u': 'vim-mode-plus:select-previous-selection'
+
   ###
   EMMET
   ###
@@ -80,7 +94,7 @@ VIM MODE PLUS
   'alt-d': 'emmet:balance-inward'
   'ctrl-right': 'emmet:next-edit-point'
   'ctrl-left': 'emmet:prev-edit-point'
-  "cmd-shift-j": 'emmet:split-join-tag'
+  'cmd-shift-j': 'emmet:split-join-tag'
   "cmd-'": 'emmet:remove-tag'
   'cmd-shift-y': 'emmet:evaluate-math-expression'
   'ctrl-alt-up': 'emmet:increment-number-by-01'
@@ -93,14 +107,19 @@ VIM MODE PLUS
   'ctrl-shift-left': 'emmet:select-previous-item'
   'alt-shift-r': 'emmet:reflect-css-value'
   # 'ctrl-i': 'emmet:update-image-size'
-  "ctrl-shift-i": 'emmet:encode-decode-data-url'
+  'ctrl-shift-i': 'emmet:encode-decode-data-url'
   'ctrl-shift-u': 'emmet:update-tag'
   'cmd-shift-m': 'emmet:merge-lines'
   'ctrl-shift-w': 'emmet:wrap-with-abbreviation'
   'alt-cmd-enter': 'emmet:interactive-expand-abbreviation'
   'f8': 'linter-ui-default:next'
   'cmd-shift-e': 'tree-view:reveal-active-file'
-    
+  
+  ###
+  Jumpy
+  ###
+  'ctrl-j': 'jumpy:toggle'
+  'ctrl-k': 'jumpy:toggle'
 
 
 # text-editor.mini
@@ -110,10 +129,10 @@ VIM MODE PLUS
 
 # normal
 'atom-text-editor.vim-mode-plus.normal-mode':
-  'ctrl-j': 'window:focus-pane-below'
-  'ctrl-k': 'window:focus-pane-above'
-  'ctrl-h': 'window:focus-pane-on-left'
-  'ctrl-l': 'window:focus-pane-on-right'
+  # 'ctrl-j': 'window:focus-pane-below'
+  # 'ctrl-k': 'window:focus-pane-above'
+  # 'ctrl-h': 'window:focus-pane-on-left'
+  # 'ctrl-l': 'window:focus-pane-on-right'
 
   'g f': 'open-this:here'
   'ctrl-w f': 'open-this:split-down'
@@ -136,6 +155,7 @@ VIM MODE PLUS
   ###
   'g h': 'typescript:show-tooltip'
   'g d': 'typescript:go-to-declaration'
+  'g R': 'typescript:rename-refactor'
 
 # insert
 'atom-text-editor.vim-mode-plus.insert-mode':
@@ -150,7 +170,7 @@ VIM MODE PLUS
   'j j': 'vim-mode-plus:activate-normal-mode'
 
 # non-insert
-'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+'atom-text-editor.vim-mode-plus:not(.insert-mode):not(.autocomplete-active)':
   'g C': 'vim-mode-plus:camel-case'
 
   'ctrl-cmd-k': 'vim-mode-plus:move-up-to-edge'
@@ -213,3 +233,14 @@ VIM MODE PLUS
   'ctrl-l': 'pane:split-right'
   'ctrl-j': 'pane:split-down'
   'ctrl-g': 'core:cancel'
+  
+
+'body atom-text-editor.autocomplete-active':
+  'ctrl-p': 'autocomplete-plus:move-up'
+  'ctrl-n': 'autocomplete-plus:move-down'
+  'pageup': 'autocomplete-plus:page-up'
+  'pagedown': 'autocomplete-plus:page-down'
+  'home': 'autocomplete-plus:move-to-top'
+  'end': 'autocomplete-plus:move-to-bottom'
+  # 'escape': 'autocomplete-plus:cancel'
+  'enter': 'autocomplete-plus:confirm'

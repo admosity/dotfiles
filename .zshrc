@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/cain/.oh-my-zsh
 export KEYTIMEOUT=1
@@ -12,16 +19,17 @@ export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"'
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME=robbyrussell
-# ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME=powerlevel10k/powerlevel10k
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_right"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_NODE_VERSION_BACKGROUND='28'
-POWERLEVEL9K_NODE_VERSION_FOREGROUND='15'
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+# POWERLEVEL9K_STATUS_VERBOSE=false
+# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_right"
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+# POWERLEVEL9K_NODE_VERSION_BACKGROUND='28'
+# POWERLEVEL9K_NODE_VERSION_FOREGROUND='15'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -118,6 +126,8 @@ alias glgrc="unbuffer git for-each-ref --sort=committerdate refs/heads/ refs/rem
 alias glgr="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%cn%Creset' --abbrev-commit --date=relative"
 alias gsf="git submodule foreach"
 alias gmercer="ssh-add ~/.ssh/id_rsa_adam-bitbucket && ssh-add ~/.ssh/id_rsa"
+alias gfm="git fetch origin master:master"
+alias gcmf="gfm && gcm"
 
 # Diff color word
 alias gddw="git diff --color-words=."
@@ -132,6 +142,7 @@ alias yarne="yarn --ignore-engines"
 alias yarnl="yarne --no-lockfile"
 alias reyarnl="rm -rf ./node_modules && yarnl"
 alias renpmi="rm -rf ./node_modules && npm i"
+alias repnpmi="rm -rf ./node_modules && pnpm i"
 
 # quick weather
 alias weather="curl -4 http://wttr.in"
@@ -148,6 +159,23 @@ alias clear_nodemodules="find . -name node_modules -exec rm -rf '{}' +"
 alias webserver="npx browser-sync start --server --files \"*/*\""
 
 # End of aliases
+
+# Helper functions
+
+#######################################
+# Synchronize directory 1 into directory 2 without deleting
+# Globals:
+#   None
+# Arguments:
+#   dir1 dir2
+# Outputs:
+#   modifies dir2
+#######################################
+function sync_dir {
+  rsync -av "${1%/}/" "${2%/}"
+}
+
+# End helper functions
 
 export NVM_DIR="/Users/cain/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -213,9 +241,6 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-npm-completion-###
 export PATH="/usr/local/sbin:$PATH:/Users/cain/bin"
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/cain/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # Angular helpers
 # usage: ngrxG feature-name
@@ -296,3 +321,6 @@ elif type compctl &>/dev/null; then
   compctl -K _pm2_completion + -f + pm2
 fi
 ###-end-pm2-completion-###
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/cain/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;

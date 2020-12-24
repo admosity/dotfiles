@@ -1,0 +1,115 @@
+// Place your key bindings in this file to overwrite the defaults
+[{
+  "key": "shift+cmd+e",
+  "command": "workbench.files.action.showActiveFileInExplorer",
+  "when": "editorTextFocus"
+},
+{
+  "key": "cmd+'",
+  "command": "editor.emmet.action.removeTag"
+},
+{
+  "key": "shift+cmd+r",
+  "command": "workbench.action.showAllSymbols"
+},
+{
+  "key": "cmd+t",
+  "command": "-workbench.action.showAllSymbols"
+},
+{
+  "key": "cmd+t",
+  "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+},
+{
+  "key": "ctrl+shift+r",
+  "command": "workbench.action.openRecent"
+},
+{
+  "key": "ctrl+r",
+  "command": "-workbench.action.openRecent"
+},
+{
+  "key": "ctrl+t",
+  "command": "extension.transpose"
+},
+{
+  "key": "ctrl+shift+e",
+  "command": "editor.emmet.action.expandAbbreviation"
+},
+// open file from File Explorer
+{
+  "key": "cmd+enter",
+  "command": "list.select",
+  "when": "explorerViewletVisible && filesExplorerFocus"
+},
+{
+  "key": "ctrl+enter",
+  "command": "explorer.openToSide",
+  "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+},
+{
+  "key": "cmd+shift+b",
+  "command": "workbench.view.scm"
+},
+{
+  "key": "shift+cmd+\\",
+  "command": "macros.revealFile"
+},
+{
+  "key": "cmd+k cmd+h",
+  "command": "gitlens.toggleFileHeatmap"
+},
+
+{
+  "key": "ctrl+shift+e",
+  "command": "editor.action.insertSnippet",
+  "when": "editorTextFocus && editorLangId != scss && editorLangId != html"
+},
+{
+  "key": "cmd+shift+l",
+  "command": "settings.cycle.listMode",
+  "when": "explorerViewletVisible && filesExplorerFocus"
+},
+{
+  "key": "j",
+  "command": "list.focusDown",
+  "when": "filesExplorerFocus && !inputFocus"
+},
+{
+  "key": "k",
+  "command": "list.focusUp",
+  "when": "filesExplorerFocus && !inputFocus"
+},
+{
+  "key": "ctrl+alt+cmd+k",
+  "command": "bookmarks.toggleLabeled"
+},
+// toggle bold in markdown
+{
+  "key": "cmd+b",
+  "command": "markdownExtended.toggleBold",
+  "when" : "editorTextFocus && editorLangId == markdown"
+},
+
+// vim work with word wrap
+{
+  "key": "up",
+  "command": "cursorUp",
+  "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+},
+{
+  "key": "down",
+  "command": "cursorDown",
+  "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+},
+// {
+//   "key": "k",
+//   "command": "cursorUp",
+//   "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+// },
+// {
+//   "key": "j",
+//   "command": "cursorDown",
+//   "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+// }
+]

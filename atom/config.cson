@@ -7,8 +7,14 @@
       size: {}
       spawnCount: {}
       totalCount: {}
-    screenShake:
-      enabled: false
+    playAudio:
+      audioclip: "customAudioclip"
+      customAudioclip: "/Users/cain/Downloads/terrycrews-powerrrrrr.mp3"
+      enabled: true
+    plugins:
+      playAudio: true
+      screenShake: true
+    screenShake: {}
   "atom-beautify":
     general:
       _analyticsUserId: "f69d2d47-c2d7-4bba-a80b-b05668d4925e"
@@ -45,7 +51,8 @@
   "atom-typescript": {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
-    suggestionListFollows: "Cursor"
+    similarSuggestionRemoval: "textOrSnippet"
+    useCoreMovementCommands: false
   core:
     closeEmptyWindows: false
     customFileTypes:
@@ -60,12 +67,10 @@
         "BUCK"
       ]
     disabledPackages: [
-      "atom-ternjs"
       "linter-jscs"
       "linter-eslint"
       "Sublime-Style-Column-Selection"
       "linter-htmlhint"
-      "activate-power-mode"
       "whitespace"
       "highlight-selected"
       "minimap-highlight-selected"
@@ -80,6 +85,8 @@
       "language-diff"
       "typescript-modules-helper"
       "linter"
+      "activate-power-mode"
+      "ide-typescript"
     ]
     packagesWithKeymapsDisabled: [
       "emmet"
@@ -91,10 +98,9 @@
       "monokai"
     ]
   editor:
-    fontFamily: "Hasklig-Medium"
-    fontSize: 11
+    fontFamily: "FiraMonoForPowerline-Medium"
+    fontSize: 13
     invisibles: {}
-    lineHeight: 1.25
     nonWordCharacters: "/\\()\"':,.;<>~!@#%^&*|+=[]{}`?-…"
     normalizeIndentOnPaste: true
     preferredLineLength: 140
@@ -108,6 +114,12 @@
     promptWhenFileHasChangedOnDisk: false
   "find-and-replace":
     scrollToResultOnLiveSearch: true
+  "fuzzy-finder":
+    scoringSystem: "fast"
+    useRipGrep: true
+  jumpy:
+    fontSize: 1
+    highContrast: true
   "language-babel": {}
   linter: {}
   "linter-eslint":
@@ -119,7 +131,7 @@
     esnext: true
     fixOnSave: true
   "linter-ui-default":
-    panelHeight: 74
+    panelHeight: 465
   "markdown-preview": {}
   "merge-conflicts": {}
   minimap:
@@ -172,6 +184,9 @@
   pigments:
     mergeColorDuplicates: true
     sortPaletteColors: "by color"
+  "platformio-ide-terminal":
+    style:
+      animationSpeed: 0
   "seti-ui":
     compactView: true
     font: "Default Atom Font"
@@ -186,7 +201,8 @@
   tabs:
     enableVcsColoring: true
     usePreviewTabs: false
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "vim-mode-plus":
     clearMultipleCursorsOnEscapeInsertMode: false
     ignoreCaseForSearch: true

@@ -105,10 +105,23 @@
               $2
             }
             '''
+  'Lambda function':
+    'prefix': 'l'
+    'body': '''
+            ($1) => $2
+            '''
   'internal':
     'prefix': 'int'
     'body': '''
             /** @internal */
+            '''
+  'command':
+    'prefix': 'n-c'
+    'body': '''
+            export interface ${1}${2}Command extends ${1}${2}Payload {
+              type: ${1}Commands.${1}${2}Command;
+            }
+
             '''
 
 

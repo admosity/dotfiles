@@ -1,67 +1,75 @@
-code --install-extension ahebrank.yaml2json
-code --install-extension alefragnani.Bookmarks
-code --install-extension alexkrechik.cucumberautocomplete
-code --install-extension andrejunges.Handlebars
-code --install-extension Angular.ng-template
-code --install-extension ashinzekene.nestjs
-code --install-extension Asuka.insertnumbers
-code --install-extension Atishay-Jain.All-Autocomplete
-code --install-extension atlassian.atlascode
-code --install-extension ChakrounAnas.turbo-console-log
-code --install-extension christian-kohler.path-intellisense
-code --install-extension CoenraadS.bracket-pair-colorizer
-code --install-extension DigitalBrainstem.javascript-ejs-support
-code --install-extension eamodio.gitlens
-code --install-extension earshinov.simple-alignment
-code --install-extension EditorConfig.EditorConfig
-code --install-extension eg2.tslint
-code --install-extension Equinusocio.vsc-community-material-theme
-code --install-extension Equinusocio.vsc-material-theme
-code --install-extension equinusocio.vsc-material-theme-icons
-code --install-extension esbenp.prettier-vscode
-code --install-extension geddski.macros
-code --install-extension gencer.html-slim-scss-css-class-completion
-code --install-extension HookyQR.beautify
-code --install-extension hoovercj.vscode-settings-cycler
-code --install-extension jakob101.RelativePath
-code --install-extension JayFiDev.tablegenerator
-code --install-extension jebbs.markdown-extended
-code --install-extension joelday.docthis
-code --install-extension johnpapa.Angular2
-code --install-extension justjavac.vscode-deno
-code --install-extension kurre.turndown-vscode
-code --install-extension MariusAlchimavicius.json-to-ts
-code --install-extension ms-azuretools.vscode-cosmosdb
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-python.python
-code --install-extension ms-vscode.atom-keybindings
-code --install-extension ms-vscode.azure-account
-code --install-extension ms-vscode.vscode-js-profile-table
-code --install-extension ms-vsliveshare.vsliveshare
-code --install-extension msjsdiag.debugger-for-chrome
-code --install-extension mushan.vscode-paste-image
-code --install-extension myxvisual.vscode-ts-uml
-code --install-extension natewallace.angular2-inline
-code --install-extension rbbit.typescript-hero
-code --install-extension redhat.java
-code --install-extension redhat.vscode-yaml
-code --install-extension ryanluker.vscode-coverage-gutters
-code --install-extension sdras.night-owl
-code --install-extension shanoor.vscode-nginx
-code --install-extension shuworks.vscode-table-formatter
-code --install-extension stkb.rewrap
-code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension thomas-baumgaertner.vcl
-code --install-extension v4run.transpose
-code --install-extension VisualStudioExptTeam.vscodeintellicode
-code --install-extension vscjava.vscode-java-debug
-code --install-extension vscjava.vscode-java-dependency
-code --install-extension vscjava.vscode-java-pack
-code --install-extension vscjava.vscode-java-test
-code --install-extension vscjava.vscode-maven
-code --install-extension vscode-icons-team.vscode-icons
-code --install-extension vscodevim.vim
-code --install-extension WallabyJs.quokka-vscode
-code --install-extension WallabyJs.wallaby-vscode
-code --install-extension yzane.markdown-pdf
-code --install-extension yzhang.markdown-all-in-one
+aaronthomas.vscode-snazzy-operator
+ahebrank.yaml2json
+alefragnani.Bookmarks
+alexkrechik.cucumberautocomplete
+andrejunges.Handlebars
+Angular.ng-template
+ashinzekene.nestjs
+Asuka.insertnumbers
+Atishay-Jain.All-Autocomplete
+atlassian.atlascode
+ChakrounAnas.turbo-console-log
+christian-kohler.path-intellisense
+CoenraadS.bracket-pair-colorizer
+dbaeumer.vscode-eslint
+denoland.vscode-deno
+DigitalBrainstem.javascript-ejs-support
+eamodio.gitlens
+earshinov.simple-alignment
+EditorConfig.EditorConfig
+eg2.tslint
+Equinusocio.vsc-community-material-theme
+Equinusocio.vsc-material-theme
+equinusocio.vsc-material-theme-icons
+esbenp.prettier-vscode
+geddski.macros
+gencer.html-slim-scss-css-class-completion
+GraphQL.vscode-graphql
+HookyQR.beautify
+hoovercj.vscode-settings-cycler
+jakob101.RelativePath
+JayFiDev.tablegenerator
+jebbs.markdown-extended
+joelday.docthis
+johnpapa.Angular2
+kurre.turndown-vscode
+MariusAlchimavicius.json-to-ts
+Mikael.Angular-BeastCode
+mrmlnc.vscode-scss
+ms-azuretools.vscode-cosmosdb
+ms-azuretools.vscode-docker
+ms-python.python
+ms-toolsai.jupyter
+ms-vscode.atom-keybindings
+ms-vscode.azure-account
+ms-vscode.vscode-js-profile-table
+ms-vscode.vscode-typescript-next
+ms-vsliveshare.vsliveshare
+msjsdiag.debugger-for-chrome
+mushan.vscode-paste-image
+myxvisual.vscode-ts-uml
+natewallace.angular2-inline
+QassimFarid.ejs-language-support
+rbbit.typescript-hero
+redhat.java
+redhat.vscode-yaml
+ryanluker.vscode-coverage-gutters
+sdras.night-owl
+shanoor.vscode-nginx
+shuworks.vscode-table-formatter
+stkb.rewrap
+streetsidesoftware.code-spell-checker
+thomas-baumgaertner.vcl
+v4run.transpose
+VisualStudioExptTeam.vscodeintellicode
+vscjava.vscode-java-debug
+vscjava.vscode-java-dependency
+vscjava.vscode-java-pack
+vscjava.vscode-java-test
+vscjava.vscode-maven
+vscode-icons-team.vscode-icons
+vscodevim.vim
+WallabyJs.quokka-vscode
+WallabyJs.wallaby-vscode
+yzane.markdown-pdf
+yzhang.markdown-all-in-one
