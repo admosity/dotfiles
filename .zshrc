@@ -73,7 +73,7 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode wd docker yarn)
+plugins=(git vi-mode wd docker yarn vscode zsh-autosuggestions)
 
 # User configuration
 
@@ -177,7 +177,7 @@ function sync_dir {
 
 # End helper functions
 
-export NVM_DIR="/Users/cain/.nvm"
+export NVM_DIR="/Users/$USER/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export SVN_EDITOR=vim
@@ -240,7 +240,7 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
-export PATH="/usr/local/sbin:$PATH:/Users/cain/bin"
+export PATH="/usr/local/sbin:$PATH:/Users/cain/bin:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 
 # Angular helpers
 # usage: ngrxG feature-name
@@ -258,7 +258,6 @@ ngrxGC() {
     ng generate module $1 --flat false;
     cd $1 && ng generate feature `python -c "print '$1'.title()"` -m $1.module.ts;
     ng g s $1Controller;
-    mkdir components; cd components; ng g c $1;
   )
 }
 
@@ -324,3 +323,8 @@ fi
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/cain/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# https://unix.stackexchange.com/questions/389881/history-isnt-preserved-in-zsh#comment-858751
+unsetopt share_history
+setopt INC_APPEND_HISTORY_TIME
+# setopt SHARE_HISTORY
